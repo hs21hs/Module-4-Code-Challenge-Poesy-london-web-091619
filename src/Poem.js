@@ -2,6 +2,10 @@ import React from "react";
 
 class Poem extends React.Component {
 
+  state = {
+    read: false
+  }
+
   showRead = ()=>{
     //console.log(this.props.readPoems)
     if (this.props.readPoems.includes(this.props.poemObj.id)){
@@ -20,8 +24,10 @@ class Poem extends React.Component {
         <p>
           <strong>{this.props.poemObj.author}</strong>
         </p>
-  <button id = {this.props.poemObj.id} onClick = {(e)=>{this.props.readHandler(e.target.id)}}>{this.showRead()}</button>
+        <button id = {this.props.poemObj.id} onClick = {(e)=>{this.props.readHandler(e.target.id)}}>{this.showRead()}</button>
+        <button id = {this.props.poemObj.id} onClick = {(e)=>{this.props.handleDelete(e.target.id)}}>delete</button>
       </div>
+     
     );
   }
 }

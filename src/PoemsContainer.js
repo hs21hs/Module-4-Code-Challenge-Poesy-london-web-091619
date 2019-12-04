@@ -7,7 +7,7 @@ class PoemsContainer extends React.Component {
       <div className="poems-container">
         {
           this.props.poems.map((poem) => {
-            return <Poem poemObj = {poem} readPoems= {this.props.readPoems} readHandler = {this.props.readHandler}/>
+            return <Poem poemObj = {poem} readPoems= {this.props.readPoems} readHandler = {this.props.readHandler} handleDelete = {this.props.handleDelete}/>
           })
           // render poems here
         }
